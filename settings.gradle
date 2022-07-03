@@ -1,3 +1,7 @@
 rootProject.name = 'woodmall'
 
-include('woodmall-domain')
+include 'woodmall-domain'
+include 'woodmall-persistence'
+include 'woodmall-api'
+include 'woodmall-web'
+

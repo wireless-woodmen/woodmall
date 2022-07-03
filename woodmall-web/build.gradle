@@ -1,0 +1,10 @@
+plugins {
+    id 'woodmen-common'
+}
+
+dependencies {
+    implementation project(':woodmall-api')
+    implementation project(':woodmall-persistence')
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+}
