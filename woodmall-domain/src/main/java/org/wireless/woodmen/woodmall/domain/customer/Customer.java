@@ -1,4 +1,4 @@
-package org.wireless.woodmen.domain.customer;
+package org.wireless.woodmen.woodmall.domain.customer;
 
 import lombok.*;
 
