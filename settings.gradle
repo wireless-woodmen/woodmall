@@ -4,4 +4,5 @@ include 'woodmall-domain'
 include 'woodmall-persistence'
 include 'woodmall-api'
 include 'woodmall-web'
+include 'woodmall-notification'
 

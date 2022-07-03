@@ -6,5 +6,6 @@ dependencies {
     implementation project(':woodmall-api')
     implementation project(':woodmall-persistence')
 
+    implementation 'org.springframework.cloud:spring-cloud-starter-config'
     implementation 'org.springframework.boot:spring-boot-starter'
 }

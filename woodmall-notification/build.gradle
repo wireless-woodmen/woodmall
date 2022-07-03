@@ -1,0 +1,19 @@
+plugins {
+    id 'woodmen-common'
+}
+
+bootJar {
+    enabled(false)
+}
+
+jar {
+    enabled(true)
+}
+
+dependencies {
+    implementation project(':woodmall-domain')
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+
+    implementation 'com.slack.api:slack-api-client:1.23.0'
+}
