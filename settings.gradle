@@ -1,0 +1,3 @@
+rootProject.name = 'woodmall'
+
+include('woodmall-domain')
