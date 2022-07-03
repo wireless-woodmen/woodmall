@@ -44,7 +44,7 @@ configurations {
     compileOnly {
         extendsFrom annotationProcessor
     }
-    querydsl.extendsFrom compileClasspath
+    querydsl.extendsFrom(compileClasspath)
 }
 
 compileQuerydsl {
