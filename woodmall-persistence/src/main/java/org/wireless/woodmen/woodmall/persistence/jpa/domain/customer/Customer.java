@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Getter
-@Builder(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
@@ -23,12 +22,13 @@ public class Customer {
     private String password;
 
     public static Customer from(CustomerAddRequest request) {
-        return Customer.builder()
-            .customerName(request.getCustomerName())
-            .email(request.getCustomerEmail())
-            .phoneNumber(request.getCustomerPhoneNumber())
-            .password(request.getCustomerPassword())
-            .build();
+        return new Customer(
+            null,
+            request.getCustomerName(),
+            request.getEmail(),
+            request.getPhoneNumber(),
+            request.getPassword()
+        );
     }
 
     public CustomerResponse toResponse() {
