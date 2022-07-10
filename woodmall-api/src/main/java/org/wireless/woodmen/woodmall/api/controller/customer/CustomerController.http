@@ -1,0 +1,10 @@
+### register Customer
+POST {{baseUrl}}/api/v1/customers
+Content-Type: application/json
+
+{
+  "customerName": "jeongyong",
+  "email": null,
+  "password": null,
+  "phoneNumber": null
+}
