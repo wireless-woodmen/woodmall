@@ -38,4 +38,13 @@ public class Customer {
             this.phoneNumber
         );
     }
+	
+	public org.wireless.woodmen.woodmall.domain.customer.Customer toDomain() {
+        return new org.wireless.woodmen.woodmall.domain.customer.Customer(
+            this.customerName,
+            this.email,
+            this.phoneNumber,
+            this.password
+        );
+	}
 }

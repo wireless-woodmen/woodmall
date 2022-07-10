@@ -6,16 +6,25 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
+import org.wireless.woodmen.woodmall.domain.customer.port.CustomerQueryRepositoryPort;
 
 import java.util.List;
 
 @Slf4j
 @RequiredArgsConstructor
 @Repository
-public class CustomerQueryRepository {
+public class CustomerQueryRepository implements CustomerQueryRepositoryPort {
+    private final CustomerRepository customerRepository;
     private final JPAQueryFactory jpaQueryFactory;
 
     private static final QCustomer CUSTOMER = QCustomer.customer;
+    
+    @Override
+    public org.wireless.woodmen.woodmall.domain.customer.Customer find(Long customerId) {
+        return customerRepository.findById(customerId)
+            .orElseThrow()
+            .toDomain();
+    }
 
     public List<Customer> searchCustomer(String keyword) {
         return jpaQueryFactory.selectFrom(CUSTOMER)
