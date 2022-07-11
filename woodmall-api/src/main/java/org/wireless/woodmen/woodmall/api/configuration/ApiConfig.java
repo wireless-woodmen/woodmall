@@ -2,10 +2,12 @@ package org.wireless.woodmen.woodmall.api.configuration;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.wireless.woodmen.woodmall.api.logging.HttpLogInterceptor;
 
+@EnableAsync
 @RequiredArgsConstructor
 @Configuration
 public class ApiConfig extends WebMvcConfigurationSupport {
