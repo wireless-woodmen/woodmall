@@ -36,7 +36,7 @@ public class CustomerController {
     }
     
     @GetMapping(path = {"/{customerId}"})
-    public ResponseEntity<CustomerResponse> getCustomer(@PathVariable(required = true) @PositiveOrZero Long customerId) {
+    public ResponseEntity<CustomerResponse> getCustomer(@PathVariable @PositiveOrZero Long customerId) {
         return ResponseEntity.ok(customerQueryService.find(customerId));
     }
 }
