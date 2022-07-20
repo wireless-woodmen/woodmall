@@ -1,5 +1,7 @@
 package org.wireless.woodmen.woodmall.api.controller.customer.dto.request;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.wireless.woodmen.woodmall.domain.customer.Customer;
@@ -9,6 +11,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 @Getter
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor
 public class CustomerRegisterDto {
     @NotBlank(message = "이름은 필수 입력값입니다.")
@@ -27,6 +30,12 @@ public class CustomerRegisterDto {
             this.email,
             this.phoneNumber,
             this.password
+        );
+    }
+    
+    public static CustomerRegisterDto sample() {
+        return new CustomerRegisterDto(
+            "", "tester@test.com", "test", "01012345678"
         );
     }
 }
